@@ -1,0 +1,11 @@
+image: vnijs/rsm-msba-spark:1.8.6
+push:
+  script:
+    - sudo pip3 install 'pyrsm>=0.4.5'
+    - sudo jupyter nbconvert --execute --to html s-mobile.ipynb
+submit:
+  script:
+    - echo ""
+  only:
+    - merge_requests
+ 
